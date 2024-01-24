@@ -7,6 +7,9 @@ export default {
         'main-color': '#242424',
         'btn-color': '#1a1a1a',
       },
+      colors: {
+        'highlight-color': 'rgb(251, 146, 60)',
+      },
     },
   },
   plugins: [],

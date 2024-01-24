@@ -27,7 +27,7 @@ export function Frases() {
   return (
     <div className="flex flex-col gap-5">
       <h1 className="text-red-600 text-3xl font-medium">Random Phrases</h1>
-      <p>Click the button below to generate a new random phrase</p>
+      <p>Cique no botão baixo para gerar uma frase aleatória em inglês</p>
       <button
         className="p-3 w-fit font-medium transition rounded-lg border border-transparent bg-btn-color hover:border-violet-700 active:bg-violet-900 active:scale-95"
         onClick={carregarFrase}
@@ -35,10 +35,10 @@ export function Frases() {
         Generate
       </button>
 
-      <h4 id="frase" className="w-1/2 italic">
+      <h4 id="frase" className="w-11/12 italic">
         {`"${frase}"`}
       </h4>
-      <p id="autor" className="text-orange-400 font-bold">
+      <p id="autor" className="text-highlight-color font-bold">
         {`- ${autor}`}
       </p>
     </div>

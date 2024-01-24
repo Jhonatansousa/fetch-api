@@ -37,22 +37,48 @@ export const ConsultarCep = () => {
     <div>
       <h1 className="text-3xl font-medium">API de Buscar Cep</h1>
       <p>Digite o CEP abaixo e receba o endereço completo</p>
-      {rua && <p>Rua: {rua}</p>}
-      {bairro && <p>Bairro: {bairro}</p>}
-      {cidade && <p>Cidade: {cidade}</p>}
-      {estado && <p>Estado {estado}</p>}
+      <div className="mt-5">
+        {rua && (
+          <p>
+            <span className="text-highlight-color font-medium">Rua:</span> {rua}
+          </p>
+        )}
+        {bairro && (
+          <p>
+            <span className="text-highlight-color font-medium">Bairro:</span>{' '}
+            {bairro}
+          </p>
+        )}
+        {cidade && (
+          <p>
+            <span className="text-highlight-color font-medium">Cidade:</span>{' '}
+            {cidade}
+          </p>
+        )}
+        {estado && (
+          <p>
+            <span className="text-highlight-color font-medium">Estado:</span>{' '}
+            {estado}
+          </p>
+        )}
 
-      <form onSubmit={handleSearchCep}>
-        <input
-          className="pl-1 text-black"
-          type="text"
-          name="cep"
-          placeholder="Digite o CEP"
-          value={cep}
-          onChange={handleChange}
-        />
-        <button type="submit">confirmar</button>
-      </form>
+        <form className="mt-2" onSubmit={handleSearchCep}>
+          <input
+            className="p-2 text-black rounded-md focus:outline-highlight-color outline-none border-0"
+            type="text"
+            name="cep"
+            placeholder="Digite o CEP"
+            value={cep}
+            onChange={handleChange}
+          />
+          <button
+            className="ml-2 p-2 w-fit font-medium transition rounded-lg border border-transparent bg-btn-color hover:border-violet-700 active:bg-violet-900 active:scale-95"
+            type="submit"
+          >
+            confirmar
+          </button>
+        </form>
+      </div>
     </div>
   )
 }
