@@ -1,4 +1,5 @@
 import { ChangeEvent, FormEvent, useEffect, useState } from 'react'
+import { CircleNotch } from '@phosphor-icons/react'
 
 interface Weather {
   name: string | null
@@ -9,6 +10,7 @@ interface Weather {
 }
 
 export const OpenWeather = () => {
+  const [isLoading, setIsLoading] = useState(false)
   const [countryName, setCountryName] = useState('')
   const [lat, setLat] = useState('')
   const [lon, setLon] = useState('')
@@ -39,6 +41,7 @@ export const OpenWeather = () => {
     })
 
     console.log(data)
+    setIsLoading(false)
   }
 
   const getGeocode = async () => {
@@ -65,6 +68,7 @@ export const OpenWeather = () => {
     event.preventDefault()
     getGeocode()
     setCountryName('')
+    setIsLoading(true)
   }
 
   useEffect(() => {
@@ -75,9 +79,13 @@ export const OpenWeather = () => {
 
   return (
     <div>
-      <h1>openWeather page</h1>
+      <h1 className="text-3xl font-medium">API - Previsão de Tempo</h1>
+      <h4>
+        Digite abaixo o local e clique em buscar para receber a previsão do
+        tempo.{' '}
+      </h4>
 
-      <form className="mt-2" onSubmit={handleSearchCountry}>
+      <form className="mt-5" onSubmit={handleSearchCountry}>
         <input
           className="p-2 text-black rounded-md focus:outline-highlight-color outline-none border-0"
           type="text"
@@ -95,15 +103,29 @@ export const OpenWeather = () => {
       </form>
 
       <div>
-        <div>
-          {weather && (
+        <div className="mt-5">
+          {isLoading && (
+            <div>
+              <CircleNotch className="animate-spin" size={32} color="#d76f0f" />
+            </div>
+          )}
+          {weather.name !== null && (
             <div className="weather-info">
-              <h2>
-                {weather.name}, {weather.country}
+              <h2 className="text-highlight-color font-medium">
+                {weather.name} - {weather.country}
               </h2>
-              <p>Descrição: {weather.description}</p>
-              <p>Temperatura: {weather.temperature}°C</p>
-              <p>Sensação térmica: {weather.feelsLike}°C</p>
+              <p className="font-medium">
+                <span className="text-highlight-color">Tempo:</span>{' '}
+                {weather.description}
+              </p>
+              <p className="font-medium">
+                <span className="text-highlight-color">Temperatura:</span>{' '}
+                {weather.temperature}°C
+              </p>
+              <p className="font-medium">
+                <span className="text-highlight-color">Sensação térmica:</span>{' '}
+                {weather.feelsLike}°C
+              </p>
             </div>
           )}
         </div>

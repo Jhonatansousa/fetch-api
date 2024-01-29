@@ -1,7 +1,7 @@
 export const MusicBrainz = () => {
   return (
     <div>
-      <h1>music page</h1>
+      <h1>Music Brainz - em construção...</h1>
     </div>
   )
 }

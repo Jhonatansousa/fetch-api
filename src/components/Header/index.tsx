@@ -44,7 +44,7 @@ export const Header = () => {
         <div className="w-8 h-1 m-1 rounded-full bg-white"></div>
         <div className="w-8 h-1 m-1 rounded-full bg-white"></div>
       </button> */}
-      <ul className="sm:block md:flex">
+      <ul className="sm:block lg:flex">
         <li>
           <NavLink
             className="p-4 font-medium hover:text-highlight-color"
