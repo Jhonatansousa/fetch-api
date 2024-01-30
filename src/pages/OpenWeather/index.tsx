@@ -1,5 +1,8 @@
 import { ChangeEvent, FormEvent, useEffect, useState } from 'react'
 import { CircleNotch } from '@phosphor-icons/react'
+import dotenv from 'dotenv'
+// import { process } from 'node'
+dotenv.config()
 
 interface Weather {
   name: string | null
@@ -21,7 +24,7 @@ export const OpenWeather = () => {
     temperature: null,
     feelsLike: null,
   })
-  const APIkey = '414a4c919e871bca5f9c5ad816184c83'
+  const APIkey = process.env.OPENWEATHER_API_KEY
 
   const getWeather = async () => {
     const weatherURL = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&lang=pt&appid=${APIkey}&units=metric`
