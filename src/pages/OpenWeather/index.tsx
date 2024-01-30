@@ -45,7 +45,7 @@ export const OpenWeather = () => {
   }
 
   const getGeocode = async () => {
-    const geocodingURL = `http://api.openweathermap.org/geo/1.0/direct?q=${countryName}&appid=${APIkey}`
+    const geocodingURL = `https://api.openweathermap.org/geo/1.0/direct?q=${countryName}&appid=${APIkey}`
 
     const response = await fetch(geocodingURL, {
       method: 'GET',
