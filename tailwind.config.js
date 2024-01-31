@@ -6,6 +6,7 @@ export default {
       backgroundColor: {
         'main-color': '#242424',
         'btn-color': '#1a1a1a',
+        'menu-bg': '#3d240c',
       },
       colors: {
         'highlight-color': 'rgb(251, 146, 60)',
