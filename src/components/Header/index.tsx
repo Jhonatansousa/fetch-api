@@ -9,11 +9,11 @@ interface HeaderProps {
 export const Header = (props: HeaderProps) => {
   const [isActiveMenu, setIsActiveMenu] = useState(false)
 
-  const handleCloseMenu = () => {
-    setIsActiveMenu(false)
-  }
+  // const handleCloseMenu = () => {
+  //   setIsActiveMenu(false)
+  // }
 
-  const handleActiveMenu = () => {
+  const handleToggleMenu = () => {
     setIsActiveMenu(!isActiveMenu)
     props.statusMenu(!isActiveMenu)
   }
@@ -32,7 +32,7 @@ export const Header = (props: HeaderProps) => {
 
       <button
         className="lg:hidden *:hover:bg-highlight-color *:active:bg-[#ffbc7e] *:active:scale-90"
-        onClick={handleActiveMenu}
+        onClick={handleToggleMenu}
         type="button"
       >
         <div
@@ -48,7 +48,7 @@ export const Header = (props: HeaderProps) => {
       <ul
         className={`${isActiveMenu ? activedMenuStyle : disabledMenuStyle} lg:items-center lg:flex-row text-center  lg:visible lg:opacity-100 lg:static flex w-full  lg:w-auto lg:py-0 lg:pl-0`}
       >
-        <li onClick={handleCloseMenu}>
+        <li onClick={handleToggleMenu}>
           <NavLink
             className="p-4 font-medium hover:text-highlight-color"
             to="/frases"
@@ -56,7 +56,7 @@ export const Header = (props: HeaderProps) => {
             API Frases Aleatórias
           </NavLink>
         </li>
-        <li onClick={handleCloseMenu}>
+        <li onClick={handleToggleMenu}>
           <NavLink
             className="p-4 font-medium hover:text-highlight-color"
             to="/consultar-cep"
@@ -64,7 +64,7 @@ export const Header = (props: HeaderProps) => {
             API Consultar Cep
           </NavLink>
         </li>
-        <li onClick={handleCloseMenu}>
+        <li onClick={handleToggleMenu}>
           <NavLink
             className="p-4 font-medium hover:text-highlight-color"
             to="/music-brainz"
@@ -72,7 +72,7 @@ export const Header = (props: HeaderProps) => {
             API Music Brainz
           </NavLink>
         </li>
-        <li onClick={handleCloseMenu}>
+        <li onClick={handleToggleMenu}>
           <NavLink
             className="p-4 font-medium hover:text-highlight-color"
             to="/open-weather"
