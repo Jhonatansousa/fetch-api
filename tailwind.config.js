@@ -13,5 +13,27 @@ export default {
       },
     },
   },
-  plugins: [],
+  plugins: [
+    function ({ addUtilities }) {
+      const newUtilities = {
+        // Titles
+        '.span-highlight': {
+          color: 'rgb(251, 146, 60)',
+          fontWeight: '500',
+        },
+        '.main-title': {
+          fontWeight: '500',
+          fontSize: '1.5rem',
+          marginBottom: '0.5rem',
+        },
+        '.secondary-title': {
+          fontWeight: '500',
+          fontSize: '1.5rem',
+          marginBottom: '0.5rem',
+        },
+      }
+
+      addUtilities(newUtilities, ['responsive', 'hover'])
+    },
+  ],
 }
