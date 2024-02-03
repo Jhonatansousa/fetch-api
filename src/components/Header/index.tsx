@@ -58,6 +58,15 @@ export const Header = (props: HeaderProps) => {
         <li onClick={handleToggleMenu}>
           <NavLink
             className="p-4 font-medium hover:text-highlight-color"
+            to="/"
+          >
+            Home
+          </NavLink>
+        </li>
+
+        <li onClick={handleToggleMenu}>
+          <NavLink
+            className="p-4 font-medium hover:text-highlight-color"
             to="/frases"
           >
             API Frases Aleatórias
@@ -71,20 +80,21 @@ export const Header = (props: HeaderProps) => {
             API Consultar Cep
           </NavLink>
         </li>
-        <li onClick={handleToggleMenu}>
-          <NavLink
-            className="p-4 font-medium hover:text-highlight-color"
-            to="/music-brainz"
-          >
-            API Music Brainz
-          </NavLink>
-        </li>
+
         <li onClick={handleToggleMenu}>
           <NavLink
             className="p-4 font-medium hover:text-highlight-color"
             to="/open-weather"
           >
             API OpenWeather
+          </NavLink>
+        </li>
+        <li onClick={handleToggleMenu}>
+          <NavLink
+            className="p-4 font-medium hover:text-highlight-color"
+            to="/exercicios-e-links-uteis"
+          >
+            Exercícios e Links Úteis
           </NavLink>
         </li>
       </ul>

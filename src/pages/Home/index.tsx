@@ -565,11 +565,12 @@ export function Frases() {
             {reactPhraseAPIExample}
           </SyntaxHighlighter>
         </div>
-        <p>
+        <p className="mb-3">
           É apenas um exemplo simplificado, diversas coisas podem ser
           adicionadas, removidas e alteradas, sinta-se à vontade para explorar o
           este projeto no github, desafie-se!
         </p>
+        <strong>Confira a página de Exercícios e Links úteis!!</strong>
       </section>
     </main>
   )
