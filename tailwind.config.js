@@ -11,6 +11,9 @@ export default {
         'highlight-color': 'rgb(251, 146, 60)',
         'main-color': '#242424',
       },
+      width: {
+        largeCodeWidth: '43.75rem',
+      },
     },
   },
   plugins: [

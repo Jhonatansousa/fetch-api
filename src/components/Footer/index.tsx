@@ -31,7 +31,7 @@ export const Footer = () => {
         </a>
       </div>
       <div>
-        <p>Sinta-se à vontade para entrar em contato!</p>
+        <p className="ml-2">Sinta-se à vontade para entrar em contato!</p>
       </div>
     </footer>
   )

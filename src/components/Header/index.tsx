@@ -1,5 +1,5 @@
 import { NavLink } from 'react-router-dom'
-import { WebhooksLogo } from '@phosphor-icons/react'
+import { ArrowFatLinesUp, WebhooksLogo } from '@phosphor-icons/react'
 import { useState } from 'react'
 
 interface HeaderProps {
@@ -23,6 +23,13 @@ export const Header = (props: HeaderProps) => {
     'top-24 py-10 flex-col invisible absolute gap-10 opacity-0  duration-300'
   return (
     <nav className="py-4 mb-10 flex justify-between items-center shadow-xl relative">
+      <a
+        className="fixed bottom-12 right-8 p-2 w-fit font-medium transition rounded-lg border border-transparent bg-btn-color hover:border-violet-700 active:bg-violet-900 active:scale-95 opacity-75 hover:opacity-100 hover:text-highlight-color"
+        href="#"
+      >
+        <ArrowFatLinesUp className="w-8 h-8" />
+      </a>
+
       <NavLink to="/">
         <div className="p-4 flex items-center gap-3 hover:text-highlight-color font-bold">
           <WebhooksLogo size={32} color="#fe7b00" />
