@@ -8,7 +8,7 @@ export default {
         'menu-bg': '#1a1a1a',
       },
       colors: {
-        'highlight-color': 'rgb(251, 146, 60)',
+        'highlight-color': '#fb923c',
         'main-color': '#242424',
       },
       width: {
@@ -21,7 +21,7 @@ export default {
       const newUtilities = {
         // Titles
         '.span-highlight': {
-          color: 'rgb(251, 146, 60)',
+          color: '#fb923c',
           fontWeight: '500',
         },
         '.main-title': {

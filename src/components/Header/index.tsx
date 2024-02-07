@@ -9,16 +9,12 @@ interface HeaderProps {
 export const Header = (props: HeaderProps) => {
   const [isActiveMenu, setIsActiveMenu] = useState(false)
 
-  // const handleCloseMenu = () => {
-  //   setIsActiveMenu(false)
-  // }
-
   const handleToggleMenu = () => {
     setIsActiveMenu(!isActiveMenu)
     props.statusMenu(!isActiveMenu)
   }
   const activedMenuStyle =
-    'top-24 opacity-100 bg-menu-bg py-10 bg-opacity-45 flex-col absolute gap-10 z-50 transition-all duration-300'
+    'top-24 opacity-100 bg-menu-bg py-10 bg-opacity-95 flex-col absolute gap-10 z-50 transition-all duration-300  border-b-8 rounded-b-md border-highlight-color'
   const disabledMenuStyle =
     'top-24 py-10 flex-col invisible absolute gap-10 opacity-0  duration-300'
   return (
@@ -53,7 +49,7 @@ export const Header = (props: HeaderProps) => {
         ></div>
       </button>
       <ul
-        className={`${isActiveMenu ? activedMenuStyle : disabledMenuStyle} lg:items-center lg:flex-row text-center  lg:visible lg:opacity-100 lg:static flex w-full  lg:w-auto lg:py-0 lg:pl-0`}
+        className={`${isActiveMenu ? activedMenuStyle : disabledMenuStyle} lg:items-center lg:flex-row text-center  lg:visible lg:opacity-100 lg:static flex w-full lg:w-auto lg:py-0 lg:pl-0 lg:bg-transparent`}
       >
         <li onClick={handleToggleMenu}>
           <NavLink
