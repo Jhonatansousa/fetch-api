@@ -79,24 +79,26 @@ export const OpenWeather = () => {
 
   return (
     <div>
-      <h1 className="text-3xl font-medium">API - Previsão de Tempo</h1>
+      <h1 className="text-3xl font-medium">API - Informações Meteorológicas</h1>
       <h4>
-        Digite abaixo o local e clique em buscar para receber a previsão do
-        tempo.{' '}
+        Digite abaixo o local e clique em buscar para receber informações
+        meteorológicas.{' '}
       </h4>
 
       <form className="mt-5" onSubmit={handleSearchCountry}>
         <input
           className="p-2 text-black rounded-md focus:outline-highlight-color outline-none border-0"
           type="text"
+          pattern="^[a-zA-ZÀ-ú ]+$"
           name="cep"
           placeholder="Buscar Cidade"
           value={countryName}
           onChange={handleChange}
         />
         <button
-          className="ml-2 p-2 w-fit font-medium transition rounded-lg border border-transparent bg-btn-color hover:border-violet-700 active:bg-violet-900 active:scale-95"
+          className="ml-2 p-2 w-fit font-medium transition rounded-lg border border-transparent bg-btn-color hover:border-violet-700 active:bg-violet-900 active:scale-95 disabled:cursor-not-allowed disabled:opacity-25 disabled:border-none disabled:active:bg-btn-color disabled:active:scale-100"
           type="submit"
+          disabled={countryName.length === 0}
         >
           Buscar
         </button>

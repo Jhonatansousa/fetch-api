@@ -67,13 +67,15 @@ export const ConsultarCep = () => {
             className="p-2 text-black rounded-md focus:outline-highlight-color outline-none border-0"
             type="text"
             name="cep"
+            pattern="^[0-9]+$"
             placeholder="Digite o CEP"
             value={cep}
             onChange={handleChange}
           />
           <button
-            className="ml-2 p-2 w-fit font-medium transition rounded-lg border border-transparent bg-btn-color hover:border-violet-700 active:bg-violet-900 active:scale-95"
+            className="ml-2 p-2 w-fit font-medium transition rounded-lg border border-transparent bg-btn-color hover:border-violet-700 active:bg-violet-900 active:scale-95 disabled:cursor-not-allowed disabled:opacity-25 disabled:border-none disabled:active:bg-btn-color disabled:active:scale-100"
             type="submit"
+            disabled={cep.length === 0}
           >
             confirmar
           </button>
