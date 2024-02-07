@@ -14,7 +14,7 @@ export const Header = (props: HeaderProps) => {
     props.statusMenu(!isActiveMenu)
   }
   const activedMenuStyle =
-    'top-24 opacity-100 bg-menu-bg py-10 bg-opacity-95 flex-col absolute gap-10 z-50 transition-all duration-300  border-b-8 rounded-b-md border-highlight-color'
+    'top-24 opacity-100 bg-menu-bg py-10 bg-opacity-95 flex-col absolute gap-10 z-50 transition-all duration-300  border-b-8 rounded-b-md border-highlight-color lg:border-none'
   const disabledMenuStyle =
     'top-24 py-10 flex-col invisible absolute gap-10 opacity-0  duration-300'
   return (
